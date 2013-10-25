@@ -1,0 +1,183 @@
+<HTML>
+<HEAD>
+<title>Blue Magic, created by Peoharen</title>
+</HEAD>
+
+<BODY bgcolor="black" text="007FFF" link="FF003F" vlink="7FFF00"><br>
+<table width="850" align="center" style="-moz-border-radius:15px; border-style:solid; border-width:5px; border-color:#202020; background-color:#202020; text-align:center;"><tr><td>
+
+
+<!-- HEADER -->
+<img src="images/topleft.bmp" height="15"><img src="images/top.bmp" height="15" width="850"><img src="images/topright.bmp" height="15">
+<div id="Header" align="center" style="background-image: url(center.bmp)">
+	<div align="center" style="float: left;">
+		<img src="images/left.bmp" height="105" width="15">
+	</div>
+	<div align="center" style="float: right;">
+		<img src="images/right.bmp" height="105" width="15">
+	</div>
+	<div align="center" style="float: center; height:105;">
+		<font size='7'><b>Blue Magic</b></font><br>
+		<i>By Peoharen</i><br>
+		<a href='Join.htm'>Become A Blue Mage</a> | 
+		<a href='Command.htm'>Using [BM</a> | 
+		<a href='Spells.htm'>Learning Spells</a> | 
+		<a href='Quests.htm'>Quests</a> | 
+		<a href='SubSystems.htm'>For Others</a> | 
+		<a href='Deva.htm'>Development</a>
+	</div>
+</div>
+<img src="images/bottomleft.bmp" height="15"><img src="images/bottom.bmp" height="15" width="850"><img src="images/bottomright.bmp" height="15">
+
+<!-- CONTENT -->
+<img src="images/topleft.bmp" height="15"><img src="images/top.bmp" height="15" width="850"><img src="images/topright.bmp" height="15">
+<div id="Content" align="center" style="background-image: url(center.bmp)">	
+	<div align="center" style="float: left;">
+		<img src="images/left.bmp" height="1600" width="15">
+	</div>
+	<div align="center" style="float: right;">
+		<img src="images/right.bmp" height="1600" width="15">
+	</div>
+	<div align="left" style="float: center; height:1600;">
+		&nbsp;
+		<ul>
+			<font size='5'><b>Monk</b></font>
+			<ul>
+				A half-complex Monk system that is all based off an item.
+				This things are pretty complex. It has stances via context 
+				menus, level, combos, and takes up multiple layers.<br>
+				<br>
+				<b>Multi Layer</b>
+				<ul>
+					They are marked as the glove layer but they equip a 
+					second item to the two handed layer preventing you from 
+					using other weapons or drinking potions while using them.<br>
+				</ul>
+				<b>Level</b>
+				<ul>
+				The gloves can be set to five different levels, each affects 
+				the bonus amounts from stances and the base strike's damage 
+				bonus. Level gain is meant to be earn through questing and 
+				current I have not made any level up quests.<br>
+				</ul>
+				<b>Improved Unarmed Strike</b>
+				<ul>
+					At level 1 they deal 1~4 damage, as per Fists. Each level 
+					ups the damage by 3 so at the highest level they have a 
+					base min/max range of 16~19.<br>
+				</ul>
+				<b>Stances</b>
+				<ul>
+					The gloves can be clicked up and set to different 
+					elemental themes. Each also has a capstone trait. The 
+					gloves must be at the 5th level to gain that property.
+					Finally each element type has a theme. Air boosts defense 
+					and speed while being based off the energy type. Earth 
+					handles regeneration. Fire is attack & damage. Water is 
+					spell focused and based off cold. Most bonuses granted 
+					are 5 + (level x 2) but some are less.
+				</ul>
+				<b>Combos</b>
+				<ul>
+					The system tracks the last three strikes you made, 
+					if the strikes line up into a valid combo you can use 
+					a finisher to excute various effects. Upon being double 
+					by the wearer they receive a gump that can look like this.<br>
+					<img src='images\monk\monkgump.png'><br>
+					A. Strike list: air, earth, fire, water, light, dark.<br>
+					B. Currently selected strike is colored red.<br>
+					C. Combo chain, colored by element.<br>
+					D. Finisher (only appears for valid combos).<br>
+					E. Wholeness of Body (turns grey when unable to use).<br>
+					The four elemental strikes deal an extra 1d6 damage per level.<br>
+					Light is half that amount and is direct, the Dark type deals chaos.<br>
+				</ul>
+				<b>Finishers</b>
+				<ul>
+					<table style='color: 007FFF;'>
+						<tr><td rowspan='3'><img src='images\monk\air.png'></td></tr>
+						<tr><td><b>The Gathering Storm</b></td></tr>
+						<tr><td>Struck target has -10% hit chance for 30 seconds.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\earth.png'></td></tr>
+						<tr><td><b>The Trembling Earth</b></td></tr>
+						<tr><td>Struck target has -2 to cast speed & recovery for 30 seconds.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\fire.png'></td></tr>
+						<tr><td><b>Breath of the Fire Dragon</b></td></tr>
+						<tr><td>The monk breaths a cone of fire damging everyone in it.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\water.png'></td></tr>
+						<tr><td><b>The Raging Sea</b></td></tr>
+						<tr><td>Struck target is Slowed for 30 seconds.</td></tr>
+
+						<tr><td rowspan='3'><img src='images\monk\light.png'></td></tr>
+						<tr><td><b>Healing Ki</b></td></tr>
+						<tr><td>The monk and his nearby party members heal 1d6 HP per level.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\lightair.png'></td></tr>
+						<tr><td><b>Dance of Clouds</b></td></tr>
+						<tr><td>The monk and his nearby party members gain +25% defense for 15 seconds.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\lightearth.png'></td></tr>
+						<tr><td><b>Grasp the Earth Dragon</b></td></tr>
+						<tr><td>The monk and his nearby party members gain +5 to all resists for 60 seconds.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\lightfire.png'></td></tr>
+						<tr><td><b>Walk of the Sun</b></td></tr>
+						<tr><td>The monk and his nearby party members gain +10 to all stats for 60 seconds.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\lightwater.png'></td></tr>
+						<tr><td><b>Aligning the Heavens</b></td></tr>
+						<tr><td>The monk and his nearby party memebers gain +25% lower mana cost for 15 seconds.</td></tr>
+
+						<tr><td rowspan='3'><img src='images\monk\dark.png'></td></tr>
+						<tr><td><b>Touch of Despair</b></td></tr>
+						<tr><td>Doesn't work yet.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\darkair.png'></td></tr>
+						<tr><td><b>Falling Star Strike</b></td></tr>
+						<tr><td>Struck target has -25% to defense for 10 seconds.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\darkearth.png'></td></tr>
+						<tr><td><b>Pain Touch</b></td></tr>
+						<tr><td>Struck target has -10 to all stats for 60 seconds.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\darkfire.png'></td></tr>
+						<tr><td><b>Karmic Strike</b></td></tr>
+						<tr><td>Scores a critical hit (*2 damage) but the monk takes a huge penalty to resistance for 5 seconds.</td></tr>
+						<tr><td rowspan='3'><img src='images\monk\darkwater.png'></td></tr>
+						<tr><td><b>Freezing The Life Blood</b></td></tr>
+						<tr><td>Struck target is paralyzed for 15 seconds.</td></tr>
+					</table>
+				</ul>
+				<b>Wholeness Of Body</b>
+				<ul>
+					Paralyzes you and only works while paralyzed.<br>
+					You have increased HP recovery, +20hp/second.<br>
+					Duration is based on level and once used it cannot be used again for two minutes.<br>
+				</ul>
+			</ul>
+			<br>
+
+		</ul>
+	</div>
+</div>
+<img src="images/bottomleft.bmp" height="15"><img src="images/bottom.bmp" height="15" width="850"><img src="images/bottomright.bmp" height="15">
+
+
+
+
+
+<!-- FOOTER -->
+<img src="images/topleft.bmp" height="15"><img src="images/top.bmp" height="15" width="850"><img src="images/topright.bmp" height="15">
+<div id="Footer" align="center" style="background-image: url(center.bmp)">
+	<div align="center" style="float: left;">
+		<img src="images/left.bmp" height="57" width="15">
+	</div>
+	<div align="center" style="float: right;">
+		<img src="images/right.bmp" height="57" width="15">
+	</div>
+	<div align="center" style="float: center; height:57;">
+		<img src="images/planewalk.png">
+	</div>
+</div>
+<img src="images/bottomleft.bmp" height="15"><img src="images/bottom.bmp" height="15" width="850"><img src="images/bottomright.bmp" height="15">
+
+
+
+
+</td></tr></table>
+</BODY>
+</HTML>
+

@@ -1,0 +1,44 @@
+
+
+1: 3, Goblin Punch, Switch, Water Breathing.
+2: 3, Blow Up, Dragon Force, Limit Glove.
+3: 3, Demi, Level 4 Holy, Magic Hammer, Shield.
+4: 4, Mind Blast, Thurst Kick, Vanish
+5: 4, Flame Thrower, Guard Off, Mighty Guard, Poison Claw.
+6: 4, Angel's Snack, Fifty Needles, Trine, White Wind.
+7: 4, Bad Breath, Drain Touch, Night, Stare.
+8: 3, Frog Drop, Traveler, Matra Magic, Shadow Flare.
+
+Name		| 	Power	|
+Angels Snack	| 	6	|
+Bad Breath	| 	7	|
+Blow Up		| 	2	|
+Demi		| 	3	|
+Dragon Force	| 	2	|
+Drain Touch	| 	7	|
+Fifty Needles	| 	6	|
+Flame Thrower	| 	5	|
+Frog Drop	| 	8	|
+Goblin Punch	| 	1	|
+Guard Off	| 	5	|
+Level 4 Holy	| 	4	|
+Limit Glove	| 	2	|
+Magic Hammer	| 	3	|
+Matra Magic	| 	8	|
+Mighty Guard	| 	5	|
+Mind Blast	| 	4	|
+Night		| 	7	|
+Poison Claw	| 	5	|
+Shadow Flare	| 	8	|
+Shield		| 	3	|
+Stare		| 	7	|
+Switch		| 	1	|
+Thrust Kick	| 	4	|
+Traveler	|	8	|
+Trine		| 	6	|
+Vanish		| 	4	|
+Water Breathing	|	1	|
+White Wind	| 	6	|
+
+
+

@@ -1,0 +1,124 @@
+using System;
+using System.Collections;
+using Server;
+using Server.Mobiles;
+using Server.Network;
+using Server.Targeting;
+using Server.Spells;
+
+namespace Server.Items
+{
+	public class EvilAlexisEgg : Item, ICarvable
+	{
+		private EvilAlexisTimer m_Timer;
+
+		[Constructable]
+		public EvilAlexisEgg() : base( 0xC6A )
+		{
+			Movable = false;
+			Name = "an Explosive Egg";
+
+			m_Timer = new EvilAlexisTimer( this );
+			m_Timer.Start();
+		}
+
+		public void Carve( Mobile from, Item item )
+		{
+			Effects.PlaySound( GetWorldLocation(), Map, 0x48F );
+			Effects.SendLocationEffect( GetWorldLocation(), Map, 0x3728, 10, 10, 0, 0 );
+
+			if ( 0.3 > Utility.RandomDouble() )
+			{
+
+				from.SendMessage( "You destroy the egg." );
+
+				Gold gold = new Gold( 25, 100 );
+
+				gold.MoveToWorld( GetWorldLocation(), Map );
+
+				Delete();
+
+				m_Timer.Stop();
+			}
+			else
+			{
+				from.SendMessage( "You damage the egg." );
+			}
+		}
+
+		public EvilAlexisEgg( Serial serial ) : base( serial )
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+
+			m_Timer = new EvilAlexisTimer( this );
+			m_Timer.Start();
+		}
+
+		private class EvilAlexisTimer : Timer
+		{
+			private Item m_Item;
+
+			public EvilAlexisTimer( Item item ) : base( TimeSpan.FromSeconds( Utility.RandomMinMax( 2, 6 ) ) )
+			{
+				Priority = TimerPriority.FiftyMS;
+
+				m_Item = item;
+			}
+
+			protected override void OnTick()
+			{
+				if ( m_Item.Deleted )
+					return;
+					
+				Map map = m_Item.Map;
+				if ( map == null )
+					return;
+
+				ArrayList list = new ArrayList();					
+
+				foreach (Mobile mob in m_Item.GetMobilesInRange(2))  
+				{
+					if ( mob == null || mob.Deleted || mob.Map != map || !mob.InRange( m_Item, 2 ) || !mob.Alive || mob.IsDeadBondedPet )
+						continue;
+						
+					if ( mob is BaseCreature && (((BaseCreature)mob).Controlled || ((BaseCreature)mob).Summoned) )
+						list.Add( mob );
+					else if ( mob.Player )
+						list.Add( mob );
+				}
+			
+				Effects.SendLocationParticles( EffectItem.Create( m_Item.Location, m_Item.Map, EffectItem.DefaultDuration ), 0x36BD, 20, 10, 5044 );
+				Effects.PlaySound( m_Item.Location, m_Item.Map, 0x307);
+						
+				for ( int i = 0; i < list.Count; ++i )
+				{
+					Mobile mob = (Mobile)list[i];
+					
+					AOS.Damage( mob, mob, Utility.RandomMinMax( 15, 20 ), 0, 100, 0, 0, 0 );
+					
+					if ( mob.Alive && mob.Body.IsHuman && !mob.Mounted )
+						mob.Animate( 20, 7, 1, true, false, 0 ); // take hit
+
+                    //Effects.PlaySound(loc, map, 0x207);
+                    //Effects.SendLocationEffect(loc, map, 0x36BD, 20);
+
+				}
+
+				m_Item.Delete();
+			}
+		}
+	}
+}

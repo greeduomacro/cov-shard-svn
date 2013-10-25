@@ -1,0 +1,59 @@
+using System;
+using System.Collections;
+using Server;
+using Server.Items;
+using Server.Mobiles;
+using Server.Targeting;
+using Server.Spells;
+using Server.Spells.Necromancy;
+using Server.Spells.First;
+using Server.Spells.Second;
+using Server.Spells.Fourth;
+using Server.Spells.Fifth;
+using Server.Network;
+using Server.ContextMenus;
+using Server.Factions;
+
+namespace Server.Items
+{
+	public class KasaOfTheRajin : Kasa
+		{
+			public override int LabelNumber { get { return 1070969; } } // Kasa of the Raj-in
+	
+			public override int BasePhysicalResistance { get { return 12; } }
+			public override int BaseFireResistance { get { return 17; } }
+			public override int BaseColdResistance { get { return 21; } }
+			public override int BasePoisonResistance { get { return 17; } }
+			public override int BaseEnergyResistance { get { return 17; } }
+
+			public override bool CanBeBlessed { get { return false; } }
+
+			public override int InitMinHits { get { return 255; } }
+			public override int InitMaxHits { get { return 255; } }
+
+			[Constructable]
+			public KasaOfTheRajin() : base()
+				{
+					Attributes.SpellDamage = 12;
+					Attributes.DefendChance = 10;
+				}
+
+			public KasaOfTheRajin( Serial serial ) : base( serial )
+				{
+				}
+
+			public override void Serialize( GenericWriter writer )
+				{
+					base.Serialize( writer );
+
+					writer.Write( (int)2 );
+				}
+
+			public override void Deserialize( GenericReader reader )
+				{
+					base.Deserialize( reader );
+
+					int version = reader.ReadInt();
+		}
+
+	}

@@ -1,0 +1,15 @@
+Personal Attendatnts 1.00
+
+1. Installation
+	- Put 'Guide' folder inside 'Data' folder.
+	- Put 'Personal Attendants' folder somewhere inside 'Scripts' folder.
+	- Done.
+
+2. Changelog
+2.1. Version 1.01 - 7.19.2009
+	- Fixed a bug which caused heralds to redeed when in player's house in greeting mode.
+
+	Files
+	- \Personal Attendants\PersonalAttendant.cs
+	- \Personal Attendants\Herald.cs
+

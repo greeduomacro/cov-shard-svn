@@ -1,0 +1,156 @@
+
+Skill Set (700.0)
+	100:	Snooping (to validate whom to kill by seeing if they have X on them)
+	100:	Stealing (60.0+ for guild membership)
+	200:	Hiding + Stealth (for sneaking)
+	200:	Tactics + Weapon Skill (for combat)
+	100:	Lockpicking (to open custom locked doors)
+ACreedGuards
+	Say ! in grey on 1st notice. Yellow on second, Red on 3rd, attack on 4th.
+	Killable and attacking them doesn't make you a criminal (for sake of town guards).
+	Can call for back up.
+	Patrols on certain routes (if not summoned via quest NPCs)
+	AlwaysAttackable must be true on all ACReed NPCs
+Criminal
+	Stealing from AlwaysAttackable NPCs seems 100% none-criminal action.
+	Being marked Criminal in town isn't auto kill you as vendor's don't call guards on you.
+	Being marked Criminal prevents you from calling guards.
+	Once an NPC damages a criminal, losing crim status still prevents you from calling guards from that NPC.
+	Thus On Guard Notice you can be set criminal.
+	As long as Quest NPCs call ACreedGuards not normal Guards that's fine too.
+Quests
+	Sneak Into A House
+		Requires: Lockpicking & Stealth
+		Easy: Pick the door to enter and pick up the item.
+		Medium: Pick the door and chest the item is in.
+		Hard: The place has an NPC that will summon ACreedGuards (sneak past them).
+	Pickpocket
+		Easy: Steal the quest item from a known target in a known place.
+		Medium: Look for the target then steal the item.
+		Hard: Unknown NPC, item is cursed. Snooping
+	Spying
+		NOTE - Books can be read no matter what. NOT TRUE
+		NOTE - Have CustomBook's DoubleClick advance quest.
+		Easy: As Sneal Into A House
+		Medium: Snoop a known NPC, read book (ie where is Bob going, book says Vesper).
+		Hard: Beat up the guy (not kill), he tries to alert guards too.
+	Assassinate
+		Easy: Kill the known target in one hit.
+		Medium: Unknown target, Snoop to ID.
+		Hard: Surrounded by ACreedGuards.
+Dress Order
+	ThighBoots, Shirt, Skirt, Chest, BoneArms, Mempo, Kilt, JinBori, Belt, Coif, Gloves
+Each Grants
+	Resist All +6
+	Hit Points +15
+	Regen Hits +1
+	Mana Regen +1
+	Strength +5
+	Dexterity +3
+	Hit Chance +2
+	Defend Chance +2
+	Swing Speed +2
+	Damage Increase +5
+	Luck +100
+Total Set Value
+	Resist All +70		(total's 60, chest's 10)
+	Hit Points +165		(total)
+	Regen Hits +11		(total)
+	Regen Mana +11		(total)
+	Strength +55		(total)
+	Dexterity +33		(total)
+	Hit Chance +45		(total's 20, sword's +25)
+	Defend Chance +45	(total's 20, sword's +25)
+	Swing Speed +60		(total's 20, sword's +40)
+	Damage Increase +75	(total's 50 + sword's +25)
+	Luck +1100		(total)
+	Night Sight		(coif)
+	Lower Mana Cost +40	(skirt's 15, kilt's 15, mempo's 10)
+	Reflect Damage +25	(glove's 10 + chest's 15)
+	Enhance Potions +30	(shirt)
+
+Chain Coif
+	[addtopack static 5051 set layer Helm movable true hue 2101
+	Level 2: Night Sight
+
+Studded Mempo
+	[addtopack static 10141 set layer Neck movable true hue 2101
+	Level 2: Lower Mana Cost +10%
+
+Jin Bori (1~3 levels)
+	[addtopack static 10145 set layer MiddleTorso movable true hue 1109
+	Throws Knives
+		Double Click to use.
+		Offers target.
+		Base 10~15 damage.
+		+1 Damage per 5 str (max 25).
+		Scales, factoring Damage Increase (checks arms too).
+		Sets standard delay (6 seconds)
+		Limited Use
+			Replenish Uses by loading a Knife.
+			Hold 5 knives per level.
+
+Studded Chest
+	[addtopack static 5083 set layer InnerTorso movable true hue 2101
+	Level 1: Uses Normal Leather's ID
+	Level 2: Reflect Physical Damage +25% & uses Studded Leather's ID
+
+Woodland Belt (1~3 levels)
+	[addtopack static 11112 set layer Waist movable true hue 1175
+	Healing
+		Double Click to use.
+		Base 20 Heal.
+		+1 point per Enhance Potions (max +50).
+		Limited Use
+			Replenish Uses by loading a Greater Heal Potion
+			Hold 5 potions per level.
+
+Thigh Boots
+	[addtopack static 5905 set layer Pants movable true hue 1175
+	Level 2: 10% chance of Evasion on hit.
+
+Skirt
+	[addtopack static 5398 set layer Shoes movable true hue 2101
+	Level 2: Enhance Potions +30%
+
+Bone Arms
+	[addtopack static 5198 set layer Arms movable true hue 2101
+	Nothing (directly)
+		Sword of Altair gains various bonuses if the arms are equipped.
+
+Kilt
+	[addtopack static 5431 set layer OuterLegs movable true hue 1109
+	Level 2: Lower Mana Cost +15%
+
+Shirt
+	[addtopack static 7933 set layer Shirt movable true hue 1175
+	Level 2: Lower Mana Cost +15%
+
+Gloves
+	[addtopack static 12230 set layer Gloves movable true hue 1175
+	Level 2: ?
+
+Weapon
+	Longsword [Sword of Altair]
+		Hit Chance +25%
+		Defend Chance +25%
+		Swing Speed +30%
+		Damage Increase 50%
+		Is Wearing The Assassin's Bone Arms
+			+4.0 to OnHit's damageBonus if opponent is at 100% HP. (Note: 4.0 is the 300% DI cap)
+			+4.0 to OnHit's damageBonus if opponent is at 10% HP.
+	Leafblade [Not Going To Use]
+
+
+
+
+	[set name "<BASEFONT COLOR='#C0C0C0'>Sword of Altair"
+	[m set name "<BASEFONT COLOR='#C0C0C0'>Assassin's Garb"
+
+
+
+
+
+
+
+
