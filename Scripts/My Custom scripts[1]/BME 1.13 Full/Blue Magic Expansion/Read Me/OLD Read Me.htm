@@ -1,0 +1,399 @@
+<HTML>
+<HEAD>
+<title>Blue Magic, created by Peoharen</title>
+
+<script>
+	function CheckForFirefox()
+	{
+		if ( !(/Firefox[\/\s](\d+\.\d+)/.test( navigator.userAgent )) )
+			document.getElementById( "NoFirefox" ).style.display = 'block';
+	}
+</script>
+
+</HEAD>
+
+<BODY bgcolor="black" text="007FFF" link="FF003F" vlink="7FFF00" onLoad="CheckForFirefox()"><br>
+
+<div align="center" id="NoFirefox" style="display: none;">
+	Are you using IE?<br>
+	<img src="Are You Using IE.png"><br>
+	Misaligned even though exact pixel size is defined, no rounded edges (ie don't fully support css).<br>
+	<br>
+	Get Firefox, and stuff just plain looks better.<br>
+	<img src="Or Something Useful.png"><br>
+	<br>
+	Real Page below
+	<hr>
+	<br><br><br><br>
+</div>
+
+
+<table width="850" align="center" style="-moz-border-radius:15px; border-style:solid; border-width:5px; border-color:#202020; background-color:#202020; text-align:center;"><tr><td>
+
+
+<!-- HEADER -->
+<img src="images/topleft.bmp" height="15"><img src="images/top.bmp" height="15" width="850"><img src="images/topright.bmp" height="15">
+<div id="Header" align="center" style="background-image: url(center.bmp)">
+	<div align="center" style="float: left;">
+		<img src="images/left.bmp" height="105" width="15">
+	</div>
+	<div align="center" style="float: right;">
+		<img src="images/right.bmp" height="105" width="15">
+	</div>
+	<div align="center" style="float: center; height:105;">
+		<font size='7'><b>Blue Magic</b></font><br>
+		<i>By Peoharen</i><br>
+		<a href='Read%20Me.htm'>Read Me</a> | 
+		<a href='Updates.htm'>Updates</a> | 
+		<a href='Sub%20Systems.htm'>Sub Systems</a> | 
+		<a href='Installation.htm'>Installation</a>
+	</div>
+</div>
+<img src="images/bottomleft.bmp" height="15"><img src="images/bottom.bmp" height="15" width="850"><img src="images/bottomright.bmp" height="15">
+
+<!-- CONTENT -->
+<img src="images/topleft.bmp" height="15"><img src="images/top.bmp" height="15" width="850"><img src="images/topright.bmp" height="15">
+<div id="Content" align="center" style="background-image: url(center.bmp)">	
+	<div align="center" style="float: left;">
+		<img src="images/left.bmp" height="5500" width="15">
+	</div>
+	<div align="center" style="float: right;">
+		<img src="images/right.bmp" height="5500" width="15">
+	</div>
+	<div align="left" style="float: center; height:5500;">
+		&nbsp;
+		<ul>
+			<font size='5'><b>Blue Magic</b></font>
+			<ul>
+				If you have never played Final Fantasy then I'm sure you have no clue 
+				what Blue Magic is but you have seen it's system before. Blue Magic is 
+				the ability to permanently learn a spell or effect a monster uses. While 
+				the system to learn changes, FFVI it was attack the monster, FFXIII it 
+				was use an item, FFIV it was eat the monster, and so on. FFV in which it 
+				debuted and several other FF games it is based on getting hit with the 
+				attack and surviving. I have done this for UO.<br>
+				<br>
+				Blue Magic's spells are not just about damage. Many are utility, status, 
+				or just plain operate outside the normal principles spells use. Be sure 
+				to check the gimmicks attached to each.<br>
+				<br>
+				Blue Magic in its default set up works kinda like a class system many 
+				shards use. If you cast a Blue Spell and you have over 50.0 (excluding 
+				items) in another spellcasting or taming skill. The idea for this lock 
+				is based off synergy limitation. It simply takes less skills and stats 
+				to be a spellcaster allowing more combinations than a combat specialist. 
+				Rather than out right blocking the combinations I went with limiting 
+				their ability to hit GM in those skills. Also it forces the intent 
+				that you should pick up 30.0 in magery and use that system for recalling 
+				instead of creating another recall rip off.<br>
+				<br>
+				Many words are <i>italicized</i>, mouse over them if you want an 
+				explanation.<br>
+			</ul>
+		</ul>
+		<hr>
+		<ul>
+			<font size='5'><b>General Features</b></font>
+			<ul>
+				<br>
+				<b>Minimal edits to RunUO's files</b><br>
+				The only absolutely required edit is done to Scripts\Misc\AOS assuming 
+				you've patched up to handle SA support. This edit allows programmers to 
+				patch into the various enhancement properties AOS, SE, ML, and SA have 
+				added without having to equip a made up item into the Unsed_F slots, 
+				which may at any point be put into use by OSI anyway.<br>
+				<br>
+				<b>Seperate Save File</b><br>
+				Installing, updating, removing, is pretty easy. Blue Magic creates and 
+				maintains it's own separate save file that tracks who is a blue mage and 
+				what spells do they know. The only stuff saved in game is the additional 
+				items, mobiles, and some spawners (which can be removed with a single 
+				command). No edits have to be made to BaseSpell, Regents, or anything 
+				of the like.<br>
+				<br>
+				<b>30 New Spells</b> (and growing)<br>
+				Cleric & Druid sport less than 10 and each has been around for 4 years.<br>
+				<br>
+				<b>Several New Monsters</b><br>
+				Some of the monsters have their own cool traits.<br>
+				<br>
+				<b>New Quests</b><br>
+				Various quests have been added for blue mages. Not a blue mage? No 
+				problem, a few are slayer type and open for others to participate in for 
+				rewards.<br>
+				<br>
+				<b>Status System</b><br>
+				The status system is no longer required for use but to me it's effects are superior than to the alternative use of enhancement properties. should you take the time to install it, make the system true and several spell effects will adapt and use it.<br>
+				<br>
+			</ul>
+		</ul>
+		<hr>
+		<ul>
+			<font size='5'><b>Spells</b></font>
+			<ul>
+				<br>
+				<b>Angel's Snack</b><br>
+				Consumes a Heal, Cure, and Refresh Potions heal several aliments and a minor amount of HP. Applies to your entire party!<br>
+				<br>
+				<b>Auto Life</b><br>
+				If used on living targets they gain an auto-life buff that can ressurect them upon death.<br>
+				<br>
+				<b>Bad Breath</b><br>
+				The caster exhales a cone of gas that can debuff speed, combat skills, and resistance to the affected mobiles<br>
+				<br>
+				<b>Blow Up</b><br>
+				The caster charges up and then detonates him self dealing twice his HP in damage to the surrounding area.<br>
+				<br>
+				<b>Demi</b><br>
+				Halves the HP total of a target (max 150hp loss), <text title='Means looting rights is not awarded for this loss thus less treasure if in a party'><i>no damage rights given</i></text><br>
+				<br>
+				<b>Dragon Force</b><br>
+				A stackable self buff that bestows melee poweress at the cost of spellcasting (you may use special moves). On the 7th casting and beyond it's effect changes to shooting fireballs.<br>
+				<br>
+				<b>Drain Touch (move)</b><br>
+				A melee attack that bestows <text title='For each negative level you suffer -1 str, dex, int, & all skills'><i>negative levels</i></text> and heals the user.<br>
+				<br>
+				<b>Fifty Needles</b><br>
+				Shoots several needles at a target, each one dealing one damage per hit.<br>
+				<br>
+				<b>Flamethrower</b><br>
+				Breath a wide line of fire burning everything in it's path.<br>
+				<br>
+				<b>Frog Drop</b><br>
+				Drops frogs in an area. Duration (thus damage) & range are based on several uncommon items.<br>
+				Items: 
+					<text title='Buy form any mapmaker'><i>World Map</i></text>, 
+					<text title='Harvested from a certain plant'><i>Red Leaves</i></text>, 
+					<text title='Minable resource, talk to a glass maker for more information'><i>Sand</i></text>, 
+					<text title='A 10,000gp item offered on certain vendors'><i>Special Hair Dye</i></text>, 
+					<text title='Found at the bottom of the sea while fishing with a message in a bottle'><i>Rope</i></text>, 
+					<text title='Obtained from killing a creature spawned by planting a green thorn in a swamp, the thorn is harvested from plants.'><i>Vines</i></text>, 
+					<text title='Created by cooking a tribal berry'><i>Tribal Paint</i></text>, 
+					<text title='A stealable from Doom, spawns daily'><i>a Rock</i></text>, 
+					<text title='Planar Hitch hikers lacking a medium of their own recieve a bonus'><i>doesn't have a Runebook</i></text>, 
+					<text title='And so do bums!'><i>doesn't have gold</i></text>.<br>
+				<br>
+				<b>Goblin Punch (move)</b><br>
+				Adds a random multiplier to your damage.<br>
+				<br>
+				<b>Guard Off</b><br>
+				Halves the resistance of a target.<br>
+				<br>
+				<b>Level 4 Holy</b><br>
+				If the target's skill total can evenly be divided by 4 it deals a massive amount of damage.<br>
+				<br>
+				<b>Limit Glove (move)</b><br>
+				Deals the percentage difference in your current and maximum HP.<br>
+				<br>
+				<b>Magic Hammer</b><br>
+				Halves the mana of the target (max loss is 50).<br>
+				<br>
+				<b>Matra Magic</b><br>
+				Swaps the mana and HP of the target, anything that can have more than 500HP is immune.<br>
+				<br>
+				<b>Mightyguard (status)</b><br>
+				(Status) Bestows 
+					<text title='Halves damage taken in melee. Effectively at 0% resist its like having 50%, while at 70% resist it is only like being at 85%'><i>Protect</i></text> & 
+					<text title='Like protect but protects against spells and not melee damage'><i>Shell</i></text> on the target.<br>
+				(Other) Increases your resistance, a GMed Magic Resist character should hit 60% Resist All with this spell.<br>
+				<br>
+				<b>Mind Blast</b><br>
+				Damages the target's intelligence, the more spellcasting skills they have the greater the effect.<br>
+				<br>
+				<b>Night</b><br>
+				Darkens the area and puts everyone nearby (including the caster and his allies) to <text title="FF's Sleep: the target is unable to act and continues to snore until damaged"><i>sleep</i></text>.<br>
+				<br>
+				<b>Poison Claw (move)</b><br>
+				Infects the target with poison.<br>
+				<br>
+				<b>Shadow Flare</b><br>
+				Deals a large amount of damage to an area.<br>
+				<br>
+				<b>Shield (status)</b><br>
+				(Status only) While under it's effects damage taken drains your mana instead. the spell ends when you run out of mana.<br>
+				<br>
+				<b>Stare</b><br>
+				<text title='confused targets randomly target nearby creatures with various effects (limited by map rules)'><i>Confuses</i></text> a single target.<br>
+				<br>
+				<b>Switch</b><br>
+				Swap places with another creature.<br>
+				<br>
+				<b>Thurst Kick (move)</b><br>
+				A powerful attack that slides your opponent away from you.<br>
+				<br>
+				<b>Trine</b><br>
+				Layers several explosive runes on the ground which explode after some time. The runes can also explode by walking over them making them a quick trap.<br>
+				<br>
+				<b>Vanish</b><br>
+				Hides the caster and shunts them over a few spaces in a random direction, the caster may then sneak away for a few steps.<br>
+				<br>
+				<b>White Wind</b><br>
+				Heals all friendly creatures in range, amount is based off the caster's current HP.<br>
+			</ul>
+		</ul>
+		<hr>
+		<ul>
+			<font size='5'><b>Monsters</b></font>
+			<ul>
+				<br>
+				All monsters have a Blue prefix, monsters that mimic exsisting creatures are stronger than their normal counterparts.<br>
+				<br>
+				<b>Beholder</b> (stare)<br>
+				True to it's source, this beholder packs ten different eye beams.<br>
+				<br>
+				<b>Bomb</b> (blow up)<br>
+				Nothing major.<br>
+				<br>
+				<b>Cactuar</b> (fifty needles)<br>
+				Nothing major.<br>
+				<br>
+				<b>Dragon</b> (dragon force)<br>
+				Order dragon body, uses the Six's breath attack, Necromage AI.<br>
+				<br>
+				<b>Ethereal Warrior</b> (white wind)<br>
+				White and "holy"ish, kinda of a pain in the ass for where I have them spawning.<br>
+				<br>
+				<b>Golem</b> (flamethrower)<br>
+				Nothing major.<br>
+				<br>
+				<b>Imp</b> (demi)<br>
+				Nothing major.<br>
+				<br>
+				<b>Juggernaut</b> (mighty guard)<br>
+				Nothing major.<br>
+				<br>
+				<b>Mind Flayer</b> (mind blast)<br>
+				Don't fight it close up, it will grapple you and try to rip out your brain!<br>
+				<br>
+				<b>Mongbat</b> (switch)<br>
+				Those little things are so annoying, well now they are worse! It polymorphs it's opponents into a mongbat and uses switch to confuse everyone watching.<br>
+				<br>
+				<b>Orc Captain</b> (goblin punch)<br>
+				the not very impressive goblin punch user.<br>
+				<br>
+				<b>Rune Beetle</b> (guard off)<br>
+				Packs the typical Rune Beetle effect of having resistance which when combiend with Guard Off it means you have 1/4 of your normal resistance.<br>
+				<br>
+				<b>Skittering Hopper</b> (thrust kick)<br>
+				You know these thigns are pretty much the only mobile to use their feet to attack?<br>
+				<br>
+				<b>Pixie</b> (lv4 holy)<br>
+				Whtie and "holy"ish, not really impressive.<br>
+				<br>
+				<b>Ultimate Weapon</b> (shadow flare)<br>
+				A powerful enemy, uses bullrush, lightning strike, self healing, shadow flare, and general asskickery.<br>
+				<br>
+				<b>Wight</b> (drain touch)<br>
+				When a player dies in either Wisp Dungeon or of negative levels it has a chance to spawn where the player's corpse is.<br>
+			</ul>
+		</ul>
+		<hr>
+		<ul>
+			<font size='5'><b>Quests</b></font>
+			<ul>
+				<br>
+				<b>Blue Ben</b><br>
+				Is the quest offerer for all blue mage quests.<br>
+				<br>
+				<b>Blue Mage Training Quest</b><br>
+				Available only if your Forensics skill is below 51.0 (allowing a 50.0 start out)<br>
+				It is a skill training quest, reward is the same as EvaInt's (ring of the savant)<br>
+				<br>
+				<b>An Empty Vessel</b><br>
+				Only offered if you have more than 51.0 in Forensics.<br>
+				Not exactly a quest. It is a series of questions asked by Ben.<br>
+				Upon completion of the questions you are offered the Blue Mage Serpent Quest.<br>
+				<br>
+				<b>Blue Mage Serpent Quest</b><br>
+				Your answers to An Empty Vessel determine which place you must search for your mark.<br>
+				Your mark is a land tile (or there of) that blends in with all other land tiles.<br>
+				Only Staff and the player can see it, others walk through and cannot making it the first 
+				ever instance item in UO.<br>
+				<br>
+				<b>Blue Touched</b>
+				<ul>
+					Blue Clothing is a special kind of clothing, it comes with Resist All 
+					+5 and is blessed. The garment has been Touched by the Azurian forces 
+					to be adaptable and enchantable. There are nine different 
+					enhancements, Insight, Haste, Arcane, Skill, Mighty, Nimble, 
+					Intelligent, Regeneration, and Resistance. Each quest below rewards 
+					the items and enhancements.<br>
+					<br>
+					<b>Blue Mage Tier One Slayer Quest</b><br>
+					Kill a few drakes, gazers, lichs, and daemons for a random blue 
+					clothing reward.<br>
+					<br>
+					<b>Blue Mage Tier Two Slayer Quest</b><br>
+					Kill a few dragons, elder gazers, lich lords, and ice fiends for a 
+					random enchantment deed.<br>
+					<br>
+					<b>Blue Mage Tier Three Slayer Quest</b><br>
+					Kill a few shadow wyrms, beholders, ancient lichs, and balrons for a 
+					random powerful enchantment deed.<br>
+					<b>Limits Surpassed</b><br>
+					8 items & 9 enhancements right? Not so much. The 9th item, the 
+					necklace, can only be enhanced by a special enhancement that cannot 
+					be applied to the rest of the clothing.
+				</ul>
+				<b>Finding Quina</b><br>
+				You require this quest to enter the area where Quina spawns and complete 
+				it upon killing him. There is no kick out timer or anything so you may 
+				farm him but leaving will prevent reentry for a few days.<br>
+				<br>
+				<b>Last Move</b><br>
+				If you have learned all the moves of blue magic you can try a boss fight. Invite your friends and fight for a chance for an artifact.
+				<b>Last Spell</b><br>
+				Same concept as above but for spells. Not finished.<br>
+				<b>You are pretty good</b><br>
+				The last one in the line of boss fights. Haven't started on.<br>
+				<br>
+			</ul>
+		</ul>
+		<hr>
+		<ul>
+			<font size='5'><b>Items</b></font>
+			<ul>
+				<br>
+				<b>Blue Mage Clothing</b><br>
+				The magic binding this clothing into creation is very delicate. Someone 
+				untrained in it's use (ie not a blue mage) will unravel it destroying 
+				the clothing and all of it's enhancements.
+				<br>
+				<b>Forks!</b><br>
+				Like Quina, many blue mages have found a war fork perfectly suited to their combat style. these forks use Wrestling and do not prohibit use of combat maneuvers.<br>
+				<b>Silver</b>: Undead slayer.<br>
+				<b>Bistro</b>: Imposes a -15% fire resistance penalty on hit.<br>
+				<b>Gastro</b>: The animation changes on each swing, each type has it's own bonus.<br>
+				<b>Needle</b>: A special fork, exceptional against certain monsters whom may be required by the blue touched quests.<br>
+			</ul>
+		</ul>
+	</div>
+</div>
+<img src="images/bottomleft.bmp" height="15"><img src="images/bottom.bmp" height="15" width="850"><img src="images/bottomright.bmp" height="15">
+
+
+
+
+
+<!-- FOOTER -->
+<img src="images/topleft.bmp" height="15"><img src="images/top.bmp" height="15" width="850"><img src="images/topright.bmp" height="15">
+<div id="Footer" align="center" style="background-image: url(center.bmp)">
+	<div align="center" style="float: left;">
+		<img src="images/left.bmp" height="57" width="15">
+	</div>
+	<div align="center" style="float: right;">
+		<img src="images/right.bmp" height="57" width="15">
+	</div>
+	<div align="center" style="float: center; height:57;">
+		<img src="images/planewalk.png">
+	</div>
+</div>
+<img src="images/bottomleft.bmp" height="15"><img src="images/bottom.bmp" height="15" width="850"><img src="images/bottomright.bmp" height="15">
+
+
+
+
+</td></tr></table>
+</BODY>
+</HTML>
+

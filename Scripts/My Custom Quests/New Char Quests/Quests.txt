@@ -1,0 +1,6 @@
+Baylor = New char armor quest - Cove ( Protection Quest - Human/Elf )
+Bellen = New char Gargish Armor - TerMur ( Protection Quest - Gargoyle )
+Wakita = New char house deed quest - Tokuno ( NewNeighbors Quest )
+Fellen = New char necro-book quest - Umbra ( Ghostly Pests)
+Ranni = New char spellbook quest - Yew( Culling The Dead Quest )
+Elendor = New char bank check quest = Brit West Bank( StartupCost Quest )

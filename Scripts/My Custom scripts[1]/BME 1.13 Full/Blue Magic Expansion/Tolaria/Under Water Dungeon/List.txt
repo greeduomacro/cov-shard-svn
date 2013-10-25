@@ -1,0 +1,62 @@
+All
+	Fire Resist 100%
+
+Eel : Small Snake
+	Nothing major
+	+50 stats, +50 HP, +5 damage, +10 resists, +30.0 melee skills.
+
+Sea Snake : Small Snake
+	Lethal Poison
+	+50 stats, +50 HP, +5 damage, +10 resists, +30.0 melee skills.
+
+Electric Eel : Large Snake
+	Energy Aura
+	+50 stats, +100 HP, +5 damage, +10 resists, +30.0 melee skills.
+
+Sea Serpent : Sea Serpent
+	CantWalk false
+
+Kraken : Kraken
+	CantWalk false
+
+Deep Sea Elemental : WaterElemental
+	+50 stats, +200 HP, +5 damage, +10 resists, +30.0 melee skills.
+	Concussion Blow
+	Area Attack: [animate 12 10 1 false true 0
+		Cold damage
+		Does something pressure wise.
+
+Tidal Force Elemental : Air Elemental
+	+50 stats, +200 HP, +5 damage, +10 resists, +30.0 melee skills.
+	Bonus damage for hitting back side (*3)
+	Bonus damage for hitting the side of you (*2)
+	Area Attack: [animate 12 10 1 false true 0
+		Spins targets.
+
+Crab : IronBeetle
+	Nothing major
+
+Giant Sea Slug: Bloodworm
+	Eats corpses
+
+An Undiscovered Creature : Wyvern
+	Undiscovered, named later as "deep dragon", then renamed even later to "sea dragon"
+		done to mimic the process of naming creatures in real.
+
+Corpse : Zombie
+
+Pirate : Human
+	Title = "Sailor [lost to the sea]";
+
+Thingy's Arms : Tunnel Spirit Tentacle
+Thingy: Tunnel Spirit Body
+
+
+
+
+
+
+
+
+
+[animate 12 5 1 true false 0

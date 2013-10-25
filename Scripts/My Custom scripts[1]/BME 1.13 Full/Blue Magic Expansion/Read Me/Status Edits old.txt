@@ -1,0 +1,234 @@
+
+FORMAT
+
+FileName (why its being edited)
+
+		method name
+
+Line number on the rared RunUO 185 + ML
+[CODE TO ADD]
+
+<<>> = Another edit elsewhere in the file.
+*-*- = File change.
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+
+Playermobile (int change to damage)
+
+		public override void OnDamage( int amount, Mobile from, bool willKill )
+
+Line 1818
+//<***************Start Status Edits
+			amount += Status.PlayerOnDamage( this, from, amount );
+//<***************End Status Edits
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+
+BaseCreature (int change to damage)
+
+		public override void OnDamage( int amount, Mobile from, bool willKill )
+
+Line 1167
+//<***************Start Status Edits
+			amount += Status.CreatureOnDamage( this, from, amount );
+//<***************End Status Edits
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+
+SpellHelper
+
+		public static void Damage( Spell spell, TimeSpan delay, Mobile target, Mobile from, double damage )
+
+Line 789 (BEFORE the conversion to int)
+//<*********************Start Status Edits
+			damage *= Status.SpellDamage( from, target, damage );
+//<*********************End Status Edits
+
+
+<<>>
+
+		public static void Damage( Spell spell, TimeSpan delay, Mobile target, Mobile from, double damage, int phys, int fire, int cold, int pois, int nrgy, DFAlgorithm dfa )
+
+Line 874 (BEFORE the conversion to int)
+//<*********************Start Status Edits
+			damage *= Status.SpellDamage( from, target, damage );
+//<*********************End Status Edits
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+
+Spell 
+
+		public bool Cast()
+
+Line 568
+//<*********************Start Status Edits
+			else if ( !(Status.OnCast( m_Caster )) )
+			{
+				return false;
+			}
+//<*********************End Status Edits
+
+
+<<>>
+
+
+		public virtual TimeSpan GetCastRecovery()
+
+Line 738
+Old Line: return TimeSpan.FromSeconds( (double)delay / CastRecoveryPerSecond );
+
+//<*********************Start Status Edits
+			double total = (double)(delay / CastRecoveryPerSecond);
+			total *= Status.CastRecovery( m_Caster );
+//<*********************End Status Edits
+
+
+<<>>
+
+
+		public virtual TimeSpan GetCastDelay()
+
+Line 785
+//<*********************Start Status Edits
+			delay *= Status.CastDelay( m_Caster );
+//<*********************End Status Edits
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+
+BaseWeapon
+
+
+
+(double change to attack and defend chances)
+
+		public virtual bool CheckHit( Mobile attacker, Mobile defender )
+
+Line 812 (within the Core.AOS check)
+//<*****************************Start Status Edits
+				bonus += Status.Hit( attacker );
+				bonus -= Status.Dodge( defender );
+//<*****************************End Status Edits
+
+
+<<>>
+
+
+(adds bonus after the cap to bonus)
+		public virtual TimeSpan GetDelay( Mobile m )
+
+Line ???
+//<*********************StartStatus Edits
+			delayInSeconds = Status.SwingDelay( m, delayInSeconds );
+//<*********************End Status Edits
+
+
+<<>>
+
+
+
+
+
+
+(double change to damage bonus, this bonus stacks with str, lumber etc. and is later halved)
+
+		public virtual double ScaleDamageAOS( Mobile attacker, double damage, bool checkSkills )
+
+Line 2225 (THIS EDITS A LINE)
+//<***************Start Status Edits
+			//OLD LINE: double totalBonus = strengthBonus + anatomyBonus + tacticsBonus + lumberBonus + ((double)(GetDamageBonus() + damageBonus) / 100.0);
+
+			double extrabonus = Status.DamageBonus( attacker, damage );
+			double totalBonus = extrabonus + strengthBonus + anatomyBonus + tacticsBonus + lumberBonus + ((double)(GetDamageBonus() + damageBonus) / 100.0);
+//<***************End Status Edits
+
+
+<<>>
+
+
+		public virtual void OnHit( Mobile attacker, Mobile defender, double damageBonus )
+
+Line 1448 (this one is AFTER cap check)
+//<***************Start Status Edits
+			percentageBonus += Status.MeleeDamageBonus( attacker, defender );
+//<***************End Status Edits
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+
+RegenRates
+
+
+		private static TimeSpan Mobile_HitsRegenRate( Mobile from )
+
+Line 6319
+//<*********************Start Status Edits
+				points += Status.HitsRegen( from );
+//<*********************End Status Edits
+
+
+<<>>
+
+
+		private static TimeSpan Mobile_StamRegenRate( Mobile from )
+
+Line 106
+//<*********************Start Status Edits
+				points += Status.StamRegen( from );
+//<*********************End Status Edits
+
+
+<<>>
+
+		private static TimeSpan Mobile_ManaRegenRate( Mobile from )
+
+Line 153 (Within the Core.AOS check)
+//<*********************Start Status Edits
+				totalPoints += Status.ManaRegen( from );
+//<*********************End Status Edits
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
