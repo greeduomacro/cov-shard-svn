@@ -1,0 +1,36 @@
+Blue Magic for UO was created by Peoharen
+ 
+ 
+Account: peoharen2
+	Character: Azuralt
+		Spells Known
+			AngelsSnack
+			AutoLife
+			BadBreath
+			BlowUp
+			Demi
+			DragonForce
+			DrainTouch
+			FiftyNeedles
+			FlameThrower
+			FrogDrop
+			GoblinPunch
+			GuardOff
+			Level4Holy
+			LimitGlove
+			MagicHammer
+			MatraMagic
+			MightyGuard
+			MindBlast
+			Night
+			PoisonClaw
+			ShadowFlare
+			Shield
+			Stare
+			Switch
+			ThrustKick
+			Trine
+			Vanish
+			WhiteWind
+
+
