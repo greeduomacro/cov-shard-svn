@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<places>
+	<parent name="Ter Mur">
+		<parent name="Towns">
+			<parent name="Royal City">
+				<child name="Royal City Moongate" x="852" y="3526" z="-43" />
+				<child name="Royal City Bank" x="847" y="3438" z="-20" />
+			</parent>
+			<parent name="Holy City">
+				<child name="Holy City Moongate" x="927" y="3989" z="-39" />
+				<child name="Holy City Town Center" x="996" y="3893" z="-42" />
+			</parent>
+		</parent>
+		<parent name="Dungeons">
+			<parent name="Abyss">
+				<child name="Level1?" x="1145" y="1086" z="-40" />
+				<child name="Level2?" x="749" y="476" z="-17" />
+			</parent>
+			<parent name="Tomb of Kings">
+				<child name="Center" x="34" y="160" z="0" />
+			</parent>
+		</parent>
+		<parent name="Sites">
+			<parent name="Mini Towns">
+				<child name="Just Outside Royal City1" x="950" y="3317" z="-42" />
+				<child name="Just Outside Royal City2" x="671" y="3610" z="-42" />
+				<child name="Fisherman Village" x="618" y="3050" z="35" />
+				<child name="Near Royal City2" x="525" y="3826" z="-44" />
+				<child name="Eastern Refuge" x="1113" y="3621" z="-45" />
+			</parent>
+			<parent name="Mountain">			
+				<child name="Lava Mnt" x="393" y="3013" z="-24" />
+			</parent>
+		</parent>
+	</parent>
+</places>
