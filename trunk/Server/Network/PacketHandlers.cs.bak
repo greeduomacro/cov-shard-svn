@@ -5,7 +5,7 @@
  *   copyright            : (C) The RunUO Software Team
  *   email                : info@runuo.com
  *
- *   $Id: PacketHandlers.cs 698 2011-07-31 04:05:09Z mark $
+ *   $Id: PacketHandlers.cs 1070 2013-06-16 01:24:45Z eos@runuo.com $
  *
  ***************************************************************************/
 
@@ -824,6 +824,18 @@ namespace Server.Network
 
 					break;
 				}
+				case 0x2F: // Old scroll double click
+				{
+					/*
+					 * This command is still sent for items 0xEF3 - 0xEF9
+					 *
+					 * Command is one of three, depending on the item ID of the scroll:
+					 * - [scroll serial]
+					 * - [scroll serial] [target serial]
+					 * - [scroll serial] [x] [y] [z]
+					 */
+					break;
+				}
 				default:
 				{
 					Console.WriteLine( "Client: {0}: Unknown text-command type 0x{1:X2}: {2}", state, type, command );
@@ -1003,12 +1015,26 @@ namespace Server.Network
 
 			Mobile from = state.Mobile;
 
+			bool success = false;
+			Item holding = from.Holding;
+
 			if ( dest.IsMobile )
-				from.Drop( World.FindMobile( dest ), loc );
+				success = from.Drop( World.FindMobile( dest ), loc );
 			else if ( dest.IsItem )
-				from.Drop( World.FindItem( dest ), loc );
+				success = from.Drop( World.FindItem( dest ), loc );
 			else
-				from.Drop( loc );
+				success = from.Drop( loc );
+
+			if ( holding != null )
+			{
+				if ( !success && holding.DupeSource != null )
+				{
+					holding.DupeSource.Amount += holding.Amount;
+					holding.Delete();
+				}
+
+				holding.DupeSource = null;
+			}
 		}
 
 		public static void DropReq6017( NetState state, PacketReader pvSrc )
@@ -1024,12 +1050,26 @@ namespace Server.Network
 
 			Mobile from = state.Mobile;
 
+			bool success = false;
+			Item holding = from.Holding;
+
 			if ( dest.IsMobile )
-				from.Drop( World.FindMobile( dest ), loc );
+				success = from.Drop( World.FindMobile( dest ), loc );
 			else if ( dest.IsItem )
-				from.Drop( World.FindItem( dest ), loc );
+				success = from.Drop( World.FindItem( dest ), loc );
 			else
-				from.Drop( loc );
+				success = from.Drop( loc );
+
+			if ( holding != null )
+			{
+				if ( !success && holding.DupeSource != null )
+				{
+					holding.DupeSource.Amount += holding.Amount;
+					holding.Delete();
+				}
+
+				holding.DupeSource = null;
+			}
 		}
 
 		public static void ConfigurationFile( NetState state, PacketReader pvSrc )
@@ -1083,6 +1123,11 @@ namespace Server.Network
 					{
 						// User pressed escape
 						t.Cancel( from, TargetCancelType.Canceled );
+					}
+					else if ( Target.TargetIDValidation && t.TargetID != targetID )
+					{
+						// Sanity, prevent fake target
+						return;
 					}
 					else
 					{
@@ -1388,7 +1433,7 @@ namespace Server.Network
 					}
 				}
 
-				from.NextActionTime = DateTime.Now + TimeSpan.FromSeconds( 0.5 );
+				from.NextActionTime = DateTime.Now + Mobile.ActionDelay;
 			}
 			else
 			{
